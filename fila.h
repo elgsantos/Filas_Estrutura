@@ -25,3 +25,15 @@ void fila_insere(Fila* f,float v){
     f->vet[fim]=v;
     f->n++;
 }
+
+float fila_retira(Fila* f){
+    float v;
+    if(f->n==0){
+        printf("Fila vazia\n");
+        exit(1);
+    }
+    v=f->vet[f->ini];
+    f->ini=(f->ini+1)%TAM;
+    f->n--;
+    return v;
+}
